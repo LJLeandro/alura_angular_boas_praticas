@@ -17,7 +17,7 @@ export class AutenticacaoGuard implements CanLoad {
     
     if (!this.usuarioService.estaLogado()) {
       this.router.navigate(['']);
-      return true;
+      return false;
     }
     
     return true;
