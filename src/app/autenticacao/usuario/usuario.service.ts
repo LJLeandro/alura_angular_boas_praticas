@@ -20,6 +20,7 @@ export class UsuarioService {
   }
 
   retornaUsuario() {
+    console.log('Usuario.')
     console.log(this.usuarioSubject);
 
     return this.usuarioSubject.asObservable();

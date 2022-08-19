@@ -8,6 +8,7 @@ import { GradeFotosAnimaisComponent } from './grade-fotos-animais/grade-fotos-an
 import { CartaoModule } from '../componentes/cartao/cartao.module';
 import { DetalheAnimalComponent } from './detalhe-animal/detalhe-animal.component';
 import { ComentariosComponent } from './detalhe-animal/comentarios/comentarios.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ComentariosComponent } from './detalhe-animal/comentarios/comentarios.c
   imports: [
     CommonModule,
     AnimaisRoutingModule,
-    CartaoModule
+    CartaoModule,
+    SharedModule
   ]
 })
 export class AnimaisModule { }

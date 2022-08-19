@@ -10,10 +10,20 @@
         <div class="col-lg-4">
             <small>
                 <p class="text-left break-word">{{ animal.description }}</p>
+            
+                <i (click)="curtir()" class="fa fa-heart-o fa-2x mr-2 pull-left">{{ animal.likes }}</i>
+                <i class="fa fa-comment-o fa-2x mr-2 pull-left">{{ animal.comments }}</i>
+                <i (click)="excluir()" class="fa fa-trash-o fa-2x mr-2 pull-left"></i>
+
             </small>
-            <i (click)="curtir()" class="fa fa-heart-o fa-2x mr-2 pull-left">{{ animal.likes }}</i>
-            <i class="fa fa-comment-o fa-2x mr-2 pull-left">{{ animal.comments }}</i>
-            <i (click)="excluir()" class="fa fa-trash-o fa-2x mr-2 pull-left"></i>
+
+            <app-comentarios 
+                [id]="animalId" 
+                *ngIf="!animal.allowsComments; else warning"></app-comentarios>
+        
+            <ng-template #warning>
+                <p> O usuário não pode Comentar no animal.</p>
+            </ng-template>
         </div>
     </div>
 </div>
